@@ -1,13 +1,13 @@
 import { Button, Box } from "@mui/material";
 
 import React from "react";
+import Header from "../Header/Header";
 
 const Home = () => {
     return (
         <>
-            <Box>
-                <Button variant="contained">Click</Button>
-            </Box>
+            <Header />
+
             <div>Home</div>
         </>
     );
