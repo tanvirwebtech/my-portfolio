@@ -13,7 +13,7 @@ import React from "react";
 const Header = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -31,7 +31,7 @@ const Header = () => {
                     >
                         News
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    <Button variant="contained">Login</Button>
                 </Toolbar>
             </AppBar>
         </Box>
