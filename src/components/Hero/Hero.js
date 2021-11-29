@@ -1,10 +1,29 @@
-import { Container, Grid, Typography, Box, Button } from "@mui/material";
+import {
+    Container,
+    Grid,
+    Typography,
+    Box,
+    useTheme,
+    Button,
+} from "@mui/material";
 import React from "react";
 import tanvir from "../../images/tanvir-full.png";
 import DownloadIcon from "@mui/icons-material/Download";
-
 import "./Hero.css";
+
+import { makeStyles } from "@mui/styles";
+
 const Hero = () => {
+    const theme = useTheme();
+    const useStyles = makeStyles({
+        button: {
+            [theme.breakpoints.down("md")]: {
+                backgroundColor: "#fff !important",
+                color: "#f79100 !important",
+            },
+        },
+    });
+    const { button } = useStyles();
     return (
         <div className="hero" id="home">
             <Container>
@@ -63,6 +82,7 @@ const Hero = () => {
                                             boxShadow: "none",
                                             mr: 1,
                                         }}
+                                        className={button}
                                     >
                                         {" "}
                                         Download Resume

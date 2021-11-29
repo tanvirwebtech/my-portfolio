@@ -21,17 +21,16 @@ const Work = () => {
     }, []);
     return (
         <div id="work" style={{ padding: "50px 0" }}>
-            <Container sx={{ py: 3, px: 0 }}>
+            <Container>
                 <Typography variant="h2" sx={{ mb: 5 }}>
                     See my recent works
                 </Typography>
-                <Box>
-                    <Grid container spacing={2} sx={{ mx: "auto" }}>
+                <Box sx={{ mx: "auto" }}>
+                    <Grid container spacing={3} sx={{ mx: "auto" }}>
                         {projects.map((project) => (
                             <Grid key={project.id} item xs={12} sm={6} md={4}>
                                 <Card
                                     sx={{
-                                        maxWidth: 345,
                                         boxShadow:
                                             "10px 9px 63px 12px rgba(255,129,5,0.54)",
                                         borderRadius: 0,
@@ -40,6 +39,7 @@ const Work = () => {
                                     <img
                                         src={project.thumbImg}
                                         alt={project.projectName}
+                                        style={{ width: "100%" }}
                                     />
                                     <CardContent>
                                         <Typography

@@ -16,6 +16,24 @@ function App() {
             },
         },
     });
+    theme.typography.h2 = {
+        fontSize: "1.5rem",
+        "@media (min-width:600px)": {
+            fontSize: "1.8rem",
+        },
+        [theme.breakpoints.up("md")]: {
+            fontSize: "2.5rem",
+        },
+    };
+    theme.typography.h1 = {
+        fontSize: "2.5rem",
+        "@media (min-width:600px)": {
+            fontSize: "2.8rem",
+        },
+        [theme.breakpoints.up("md")]: {
+            fontSize: "4.2rem",
+        },
+    };
     return (
         <>
             <ThemeProvider theme={theme}>
