@@ -9,11 +9,10 @@ function App() {
     const theme = createTheme({
         palette: {
             primary: {
-                main: "#71DFE7",
+                main: "#f79100",
             },
             secondary: {
-                main: "#FFE652",
-                contrastText: "#DADDFC",
+                main: "#fff",
             },
         },
     });
@@ -21,14 +20,14 @@ function App() {
         <>
             <ThemeProvider theme={theme}>
                 {" "}
-                <Header></Header>
-                <div className="App" style={{ marginTop: "4.5rem" }}>
-                    <BrowserRouter>
+                <BrowserRouter>
+                    <Header></Header>
+                    <div className="App" style={{ marginTop: "4.5rem" }}>
                         <Routes>
                             <Route path="/" element={<Home />}></Route>
                         </Routes>
-                    </BrowserRouter>
-                </div>
+                    </div>
+                </BrowserRouter>
             </ThemeProvider>
         </>
     );

@@ -1,12 +1,16 @@
 import { Button, Box } from "@mui/material";
 
 import React from "react";
-import Header from "../Header/Header";
+import Contact from "../Contact/Contact";
+import Hero from "../Hero/Hero";
+import Work from "../Work/Work";
 
 const Home = () => {
     return (
         <>
-            <div>Home</div>
+            <Hero />
+            <Work />
+            <Contact />
         </>
     );
 };
