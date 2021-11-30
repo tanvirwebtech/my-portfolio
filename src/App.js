@@ -4,7 +4,8 @@ import Home from "./components/Home/Home";
 import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header/Header";
-
+import ProjectDetails from "./components/ProjectDetails/ProjectDetails";
+import Footer from "./components/Footer/Footer";
 function App() {
     const theme = createTheme({
         palette: {
@@ -43,8 +44,13 @@ function App() {
                     <div className="App" style={{ marginTop: "4.5rem" }}>
                         <Routes>
                             <Route path="/" element={<Home />}></Route>
+                            <Route
+                                path="/project/:id"
+                                element={<ProjectDetails />}
+                            ></Route>
                         </Routes>
                     </div>
+                    <Footer />
                 </BrowserRouter>
             </ThemeProvider>
         </>

@@ -9,12 +9,14 @@ import {
     ListItem,
     ListItemText,
     List,
+    Container,
     Divider,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@mui/styles";
 import { HashLink } from "react-router-hash-link";
-import tanvir from "../../images/tanvir-full.png";
+
+import logo from "../../images/logo-tanvirwebtech.png";
 const list = (
     <Box
         sx={{
@@ -27,6 +29,21 @@ const list = (
                 <ListItemText>
                     <HashLink style={{ textDecoration: "none" }} to="/#home">
                         Home
+                    </HashLink>{" "}
+                </ListItemText>
+            </ListItem>
+            <ListItem button>
+                <ListItemText>
+                    <HashLink style={{ textDecoration: "none" }} to="/#about">
+                        About
+                    </HashLink>{" "}
+                </ListItemText>
+            </ListItem>
+            <ListItem button>
+                <ListItemText>
+                    <HashLink style={{ textDecoration: "none" }} to="/#skills">
+                        {" "}
+                        Skills
                     </HashLink>{" "}
                 </ListItemText>
             </ListItem>
@@ -60,50 +77,69 @@ const Header = () => {
                 display: "none !important",
             },
         },
+        navLink: {
+            [theme.breakpoints.down("sm")]: {
+                display: "none !important",
+            },
+        },
         link: {
             textDecoration: "none",
-            margin: "0 5px",
+            fontWeight: "500",
+            color: "#fff",
+            margin: "0 10px",
+            transition: "0.3s all",
+            "&:hover": {
+                color: "#fccddd",
+            },
         },
     });
-    const { menuIcon, link } = useStyles();
+    const { menuIcon, link, navLink } = useStyles();
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="fixed">
-                    <Toolbar>
-                        <IconButton
-                            className={menuIcon}
-                            size="large"
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
-                            sx={{ mr: 2 }}
-                            onClick={() => setState(true)}
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Box>
-                            <HashLink to="/#home">
-                                <img
-                                    src={tanvir}
-                                    alt="tanvir"
-                                    style={{ width: "50px" }}
-                                />
-                            </HashLink>
-                        </Box>
-                        <Box sx={{ ml: "auto" }}>
-                            <HashLink className={link} to="/#home">
-                                Home
-                            </HashLink>{" "}
-                            <HashLink className={link} to="/#work">
-                                Works
-                            </HashLink>{" "}
-                            <HashLink className={link} to="/#contact">
-                                Contact
-                            </HashLink>{" "}
-                        </Box>
-                    </Toolbar>
-                </AppBar>
+                <Container>
+                    <AppBar position="fixed">
+                        <Toolbar>
+                            <Box>
+                                <HashLink to="/#home">
+                                    <img
+                                        src={logo}
+                                        alt="tanvir"
+                                        style={{ width: "50px" }}
+                                    />
+                                </HashLink>
+                            </Box>
+                            <IconButton
+                                className={menuIcon}
+                                size="large"
+                                edge="start"
+                                color="inherit"
+                                aria-label="menu"
+                                sx={{ ml: "auto" }}
+                                onClick={() => setState(true)}
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Box sx={{ ml: "auto" }} className={navLink}>
+                                <HashLink className={link} to="/#home">
+                                    Home
+                                </HashLink>{" "}
+                                <HashLink className={link} to="/#about">
+                                    About
+                                </HashLink>{" "}
+                                <HashLink className={link} to="/#skills">
+                                    Skills
+                                </HashLink>{" "}
+                                <HashLink className={link} to="/#work">
+                                    Works
+                                </HashLink>{" "}
+                                <HashLink className={link} to="/#contact">
+                                    Contact
+                                </HashLink>{" "}
+                            </Box>
+                        </Toolbar>
+                    </AppBar>
+                </Container>
             </Box>
             <div>
                 <React.Fragment>

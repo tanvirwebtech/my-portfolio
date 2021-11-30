@@ -48,3 +48,8 @@ const data = [
         thumbImg: "https://i.ibb.co/WG2XGSV/acme-Fitness.png",
     },
 ];
+
+/* 
+"screenshot1": "https://i.postimg.cc/prMSLW6S/screencapture-travelone-47500-web-app-2021-11-30-22-24-05.png"
+
+*/
